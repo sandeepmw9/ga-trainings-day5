@@ -12,10 +12,9 @@ jobs:
     environment: Prod
     runs-on: ubuntu-latest
     steps:
-      - name: print api urls
+      - name: deploy to Prod
         run: |
-          echo "displaying environment url" 
-          echo "url for staging environment: ${{env.STAGING_API_URL}}"
-          echo "url for production environment: ${{env.PRODUCTION_API_URL}}"
-          echo "displaying version"
+          echo "Deploying to Production" 
+          echo "staging api: ${{env.STAGING_API_URL}}"
+          echo "production api: ${{env.PRODUCTION_API_URL}}"
           echo "version: ${{env.VERSION}}"
