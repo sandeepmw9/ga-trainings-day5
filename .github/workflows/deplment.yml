@@ -1,9 +1,19 @@
 name: ga-hands-on-day5
 on:
   workflow_dispatch:
+env:
+  VERSION:
+  PRODUCTION_API_URL:
+  STAGING_API_URL:
 jobs:
-  build-web-app:
+  build-web-app: 
+    environment: Staging
     runs-on: ubuntu-latest
     steps:
-      - name: step1
-        run: echo "web-app"
+      - name: print api urls
+        run: |
+          echo "displaying environment url" 
+          echo "url for staging environment: ${{env.STAGING_API_URL}}"
+          echo "url for staging environment: ${{env.PRODUCTION_API_URL}}"
+          echo "displaying version"
+          echo "version: ${{env.VERSION}}"
