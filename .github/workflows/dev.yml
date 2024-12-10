@@ -1,0 +1,21 @@
+name: ga-hands-on-day5
+on:
+  push:
+    branches:
+        development
+env:
+  VERSION: ${{vars.VERSION}}
+  PRODUCTION_API_URL: ${{vars.PRODUCTION_API_URL}}
+  STAGING_API_URL: ${{vars.STAGING_API_URL}}
+jobs:
+  build-web-app: 
+    environment: Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: print api urls
+        run: |
+          echo "displaying environment url" 
+          echo "url for staging environment: ${{env.STAGING_API_URL}}"
+          echo "url for production environment: ${{env.PRODUCTION_API_URL}}"
+          echo "displaying version"
+          echo "version: ${{env.VERSION}}"
