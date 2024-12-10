@@ -2,9 +2,9 @@ name: ga-hands-on-day5
 on:
   workflow_dispatch:
 env:
-  VERSION: vars.VERSION
-  PRODUCTION_API_URL: vars.PRODUCTION_API_URL
-  STAGING_API_URL: vars.STAGING_API_URL
+  VERSION: ${{vars.VERSION}}
+  PRODUCTION_API_URL: ${{vars.PRODUCTION_API_URL}}
+  STAGING_API_URL: ${{vars.STAGING_API_URL}}
 jobs:
   build-web-app: 
     environment: Staging
